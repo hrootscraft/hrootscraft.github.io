@@ -272,7 +272,7 @@ const topProjects = [
       padding-bottom: 20px;
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
 
     .social-link {
@@ -287,6 +287,16 @@ const topProjects = [
       font-size: 14px;
       text-decoration: none;
       flex: 1;
+    }
+
+    @media (max-width: 600px) {
+      .social-links {
+        flex-wrap: wrap;
+      }
+      .social-link {
+        flex: 1 1 calc(50% - 4px);
+        min-width: calc(50% - 4px);
+      }
     }
 
     .social-link svg {
