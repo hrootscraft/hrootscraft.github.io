@@ -1,0 +1,625 @@
+---
+// Portfolio - Edit your information below
+const name = "Rutuja Bhure";
+const email = "rutuja1675@gmail.com";
+const tagline = "Building innovative solutions with code";
+const affiliation = "@Blackstone Launchpad";
+
+
+const socialLinks = {
+  resume: "https://docs.google.com/document/d/1eb_8EvdpCKhlKF_Jof8FehyRGVPVWn9Dt7H0KtJ1s9s/edit?usp=sharing",
+  github: "https://github.com/hrootscraft",
+  linkedin: "https://linkedin.com/in/rutujabhure",
+  twitter: "https://twitter.com/hrootscraft",
+};
+
+const aboutMe = [
+`I am a recent Ph.D. graduate from Carnegie Mellon University advised by Jonathan Cagan and Chris McComb. I’m interested in advancing real-time AI collaboration in both creative and technical problem-solving. I’m currently exploring full-time opportunities in machine intelligence, behavior learning, and human-machine collaboration.`,
+`My thesis proposes several agent frameworks that enable representation learning, effective exploration, and policy generalization in the generative design domain. My research enables learning from scratch in arbitrarily complex actions using novel deep learning and search methods.`,
+`Prior to my Ph.D. I graduated from the Indian Institute of Technology Jodhpur in 2017 with a Bachelor of Technology in Mechanical Engineering. I was advised by Kaushal Desai, Suril V. Shah for my undergraduate thesis.`,
+`Apart from research, I love to go on hikes and click pictures whenever I can. I also enjoy playing competitive multiplayer games and learning new skills online.`
+];
+
+const interests = [
+  {
+    emoji: "🧠",
+    title: "Machine Intelligence in Design",
+    description: "I am interested in building agent frameworks that solve complex decision-making problems. Design problems constitute several unique challenges with large and unstructured state-action spaces, state representations, and creativity introducing an interesting benchmark for intelligent agent development."
+  },
+  {
+    emoji: "🤝",
+    title: "Human-Machine Collaboration",
+    description: "With machines surpassing human skill levels in several problem-solving processes, a collaboration between humans and machines is imminent. I am interested in exploring real-time collaboration mechanisms between humans and machines to augment human decision-making."
+  },
+  {
+    emoji: "🔎",
+    title: "Behavior Learning and Interpretability",
+    description: "High-performing problem solvers have diverse and complex decision-making behavior. I am interested in understanding the underlying dynamics of that behavior and developing quantitative explanations for such behavior, which enables the transfer, learning, and interpretability of strategies."
+  }
+];
+
+const topProjects = [
+  {
+    title: "Project One: A Deep Learning Framework for Design",
+    authors: "Rutuja, Collaborator One, Collaborator Two",
+    venue: "Journal/Conference Name, 2024",
+    image: "/images/project1.png",
+    links: [
+      { label: "PDF", url: "#" },
+      { label: "PROJECT PAGE", url: "#" }
+    ]
+  },
+  {
+    title: "Project Two: Building Scalable Web Applications",
+    authors: "Rutuja, Collaborator Three",
+    venue: "Conference/Journal Name, 2023",
+    image: "/images/project2.png",
+    links: [
+      { label: "PDF", url: "#" },
+      { label: "DEMO", url: "#" }
+    ]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={`${name} - Portfolio`}>
+  <title>{name}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root {
+      --text-primary: #37352f;
+      --text-secondary: #787774;
+      --text-link: #2eaadc;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f7f6f3;
+      --bg-hover: #eeeeec;
+      --border-color: #e9e9e7;
+      --red-header: rgba(2, 146, 123, 1);
+      --green-header: rgba(2, 146, 123, 1);
+      --nav-tab-bg: rgba(35, 131, 226, 0.07);
+      --nav-tab-hover: rgba(35, 131, 226, 0.14);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: rgba(124, 130, 129, 1);
+      text-decoration: underline;
+    }
+
+    /* Header - Notion style */
+    .header {
+      background: var(--bg-primary);
+      padding: 10px 96px;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header-title {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-primary);
+    }
+
+    /* Main container */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 96px 100px;
+    }
+
+    @media (max-width: 900px) {
+      .header {
+        padding: 10px 24px;
+      }
+      .main {
+        padding: 40px 24px 60px;
+        max-width: 100%;
+      }
+    }
+
+    /* Page Title */
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    /* Navigation Tabs - Notion callout style */
+    .nav-tabs {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 10px;
+      background: rgba(228, 244, 249, 1);
+      border: 1px solid rgba(228, 244, 249, 1);
+      border-radius: 3px;
+      color: var(--text-primary);
+      font-size: 14px;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .nav-tab-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2383e2;
+    }
+    .nav-tab-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #2383e2;
+    }
+
+    /* Profile Section */
+    .profile-section {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .profile-section {
+        flex-direction: column;
+      }
+    }
+
+    .profile-image {
+      width: 180px;
+      flex-shrink: 0;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .profile-info {
+      padding-top: 0;
+    }
+
+    .profile-email {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .profile-email a {
+      color: #9b9a97;
+      text-decoration: none;
+    }
+
+    .profile-tagline {
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .profile-affiliation {
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* About Section */
+    .about-section {
+      margin-bottom: 0;
+    }
+
+    .about-section p {
+      margin-bottom: 14px;
+      color: var(--text-primary);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    /* Social Links - Notion database style like Ayush's site */
+    .social-links {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 0;
+      margin-top: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      background: rgba(228, 244, 249, 1);
+      border: 1px solid rgba(228, 244, 249, 1);
+      border-radius: 3px;
+      color: var(--text-primary);
+      font-size: 14px;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .social-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Section Header */
+    .section-header {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      margin-top: 20px;
+    }
+
+    .section-header.green {
+      color: var(--green-header);
+    }
+
+    .section-header.red {
+      color: var(--red-header);
+    }
+
+    /* Interests Grid - Notion table style */
+    .interests-section {
+      margin-bottom: 24px;
+    }
+
+    .interest-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .interest-row:first-child {
+      border-top: none;
+    }
+
+    @media (max-width: 700px) {
+      .interest-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    .interest-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .interest-content {
+      display: flex;
+      gap: 8px;
+    }
+
+    .interest-emoji {
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    .interest-description {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 32px 0 24px;
+    }
+    /* Highlights Section */
+    .highlights-section {
+      margin-bottom: 48px;
+    }
+
+    .highlight-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .highlight-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .highlight-item:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 700px) {
+      .highlight-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .highlight-image {
+      width: 180px;
+      height: 120px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .highlight-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      image-rendering: auto;
+    }
+
+    @media (max-width: 700px) {
+      .highlight-image {
+        width: 100%;
+        height: 180px;
+      }
+    }
+
+    .highlight-content h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .highlight-authors {
+      font-size: 13px;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+      line-height: 1.5;
+    }
+
+    .highlight-venue {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .highlight-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: rgba(228, 244, 249, 1);
+      border: 1px solid rgba(228, 244, 249, 1);
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    .highlight-links a {
+      color: rgba(124, 130, 129, 1);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: 48px;
+    }
+
+    .footer p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* Linked Pages */
+    .linked-pages {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .linked-pages-title {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .linked-page {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+      color: var(--text-primary);
+      font-size: 14px;
+    }
+
+    .linked-page:hover {
+      background: var(--bg-secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <span class="header-title">{name}</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Page Title -->
+    <h1 class="page-title">{name}</h1>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <a href="#about" class="nav-tab">
+        <span class="nav-tab-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        </span>
+        About Me
+      </a>
+      <a href="/projects" class="nav-tab">
+        <span class="nav-tab-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        </span>
+        Projects
+      </a>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section" id="about">
+      <div class="profile-image">
+        <img src="/images/profile.jpg" alt={name} />
+      </div>
+      <div class="profile-info">
+        <p class="profile-email"><a href={`mailto:${email}`}>{email.replace('@', '[at]')}</a></p>
+        <p class="profile-tagline">{tagline}</p>
+        <p class="profile-affiliation"><a href=#>{affiliation}</a></p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      {aboutMe.map(paragraph => (
+        <p>{paragraph}</p>
+      ))}
+    </section>
+
+    <!-- Social Links -->
+    <section class="social-links">
+      <a href={socialLinks.resume} class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+        CV
+      </a>
+      <a href={socialLinks.github} class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href={socialLinks.linkedin} class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href={socialLinks.twitter} class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        Twitter
+      </a>
+    </section>
+
+    <!-- Research Interests -->
+    <h2 class="section-header green">Research Interests</h2>
+    <section class="interests-section">
+      {interests.map(interest => (
+        <div class="interest-row">
+          <div class="interest-title">{interest.title}</div>
+          <div class="interest-content">
+            <span class="interest-emoji">{interest.emoji}</span>
+            <p class="interest-description">{interest.description}</p>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Recent Highlights -->
+    <h2 class="section-header red">Recent Highlights</h2>
+    <section class="highlights-section">
+      {topProjects.map(project => (
+        <article class="highlight-item">
+          <div class="highlight-image">
+            <img src={project.image} alt={project.title} />
+          </div>
+          <div class="highlight-content">
+            <h3>{project.title}</h3>
+            <p class="highlight-authors"><strong>{project.authors.split(',')[0]}</strong>{project.authors.includes(',') ? ',' + project.authors.split(',').slice(1).join(',') : ''}</p>
+            <p class="highlight-venue">{project.venue}</p>
+            <div class="highlight-links">
+              <span>📁</span>
+              {project.links.map((link, i) => (
+                <>
+                  <a href={link.url}>[{link.label}]</a>{i < project.links.length - 1 ? ", " : ""}
+                </>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>©{name}, {new Date().getFullYear()}</p>
+      <p>All Rights Reserved</p>
+    </footer>
+
+    <!-- Linked Pages -->
+    <section class="linked-pages">
+      <p class="linked-pages-title">Linked Pages: {topProjects.length + 1}</p>
+      {topProjects.map(project => (
+        <a href="#" class="linked-page">
+          <span>📄</span>
+          {project.title}
+        </a>
+      ))}
+      <a href="/projects" class="linked-page">
+        <span>📄</span>
+        Projects
+      </a>
+    </section>
+  </main>
+</body>
+</html>

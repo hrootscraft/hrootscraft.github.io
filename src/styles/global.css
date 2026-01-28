@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-gray-800 bg-white;
+  }
+  
+  a {
+    @apply text-primary hover:underline transition-colors;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-2xl font-semibold text-gray-900 mb-6 flex items-center gap-2;
+  }
+  
+  .card {
+    @apply bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow;
+  }
+  
+  .social-link {
+    @apply flex items-center gap-2 text-gray-600 hover:text-primary transition-colors;
+  }
+}
