@@ -7,56 +7,85 @@ const affiliation = "@Blackstone Launchpad";
 
 
 const socialLinks = {
-  resume: "https://docs.google.com/document/d/1eb_8EvdpCKhlKF_Jof8FehyRGVPVWn9Dt7H0KtJ1s9s/edit?usp=sharing",
+  resume: "https://docs.google.com/document/d/1PF_lNC3eLivs5qtlhbuykL478KvvXsLUzlfz6_dAfWI/edit?usp=sharing",
   github: "https://github.com/hrootscraft",
   linkedin: "https://linkedin.com/in/rutujabhure",
   twitter: "https://twitter.com/hrootscraft",
 };
 
 const aboutMe = [
-`I am a recent Ph.D. graduate from Carnegie Mellon University advised by Jonathan Cagan and Chris McComb. I’m interested in advancing real-time AI collaboration in both creative and technical problem-solving. I’m currently exploring full-time opportunities in machine intelligence, behavior learning, and human-machine collaboration.`,
-`My thesis proposes several agent frameworks that enable representation learning, effective exploration, and policy generalization in the generative design domain. My research enables learning from scratch in arbitrarily complex actions using novel deep learning and search methods.`,
-`Prior to my Ph.D. I graduated from the Indian Institute of Technology Jodhpur in 2017 with a Bachelor of Technology in Mechanical Engineering. I was advised by Kaushal Desai, Suril V. Shah for my undergraduate thesis.`,
-`Apart from research, I love to go on hikes and click pictures whenever I can. I also enjoy playing competitive multiplayer games and learning new skills online.`
+`I’m Rutuja Bhure, a Product Data Scientist with an MS in Data Science from University at Buffalo. I help teams answer questions like: What should we build next? How do we know it worked? Why did it move (or not move) the metric? What should we do differently?`,
+`My work spans the full decision loop: defining north-star and guardrail metrics, designing and analyzing experiments (A/B tests when possible, quasi-experiments and causal inference when not), and translating results into clear recommendations leaders can act on. I also care deeply about correctness and reproducibility—instrumentation, data quality checks, and automated pipelines—so dashboards and metrics stay trustworthy over time.`,
+`Recently, I’ve worked on experimentation, retention/churn analysis, and forecasting, building self-serve reporting that helps teams monitor activation, retention, and monetization in real time. Outside of work, I enjoy hiking, taking photos, and learning new skills.`
 ];
 
-const interests = [
+const experience = [
   {
-    emoji: "🧠",
-    title: "Machine Intelligence in Design",
-    description: "I am interested in building agent frameworks that solve complex decision-making problems. Design problems constitute several unique challenges with large and unstructured state-action spaces, state representations, and creativity introducing an interesting benchmark for intelligent agent development."
+    title: "Product Data Scientist",
+    company: "UBuffalo CoLab Powered by Blackstone LaunchPad",
+    type: "Part-time",
+    duration: "Aug 2024 - Dec 2025 · 1 yr 5 mos",
+    location: "New York · On-site",
+    description: [
+      "Designed and automated A/B-testing and causal-inference pipelines (p-value adjustment, uplift modeling) that raised founder-to-pilot conversion by 19% and informed dynamic-pricing roll-outs across four ventures.",
+      "Built revenue-forecasting ensembles (XGBoost, Prophet) improving cash-flow accuracy 40% and shortening fund-raising timelines by two weeks on average.",
+      "Developed clustering and RFM segmentation workflows in Python (Scikit-Learn, SHAP) that uncovered three high-LTV niches, lifting CAC-adjusted growth 25% for early-stage startups.",
+      "Collaborated with engineering to implement event instrumentation and self-serve dashboards so founders could monitor activation, retention and monetization in real time."
+    ],
+    skills: ["Causal Inference", "Experimental Design", "Machine Learning", "Statistical Data Analysis",  "Time Series Analysis", "Survival Analysis", "Data Analysis", "SQL", "KPI Reporting"]
   },
   {
-    emoji: "🤝",
-    title: "Human-Machine Collaboration",
-    description: "With machines surpassing human skill levels in several problem-solving processes, a collaboration between humans and machines is imminent. I am interested in exploring real-time collaboration mechanisms between humans and machines to augment human decision-making."
+    title: "Machine Learning Engineer",
+    company: "KSRA (Robotics)",
+    type: "Full-time",
+    duration: "2023 - 2023 · less than a year",
+    location: "Remote",
+    description: [
+      "Analyzed IoT sensor data to pinpoint indicators of failure modes in industrial robots. Augmented data by running 1000 parallel simulations to generate diverse fault positions. Extracted features from trajectory angles, temperature, torque, and vibrations, including peak frequency and signal-to-noise ratio.",
+      "Developed ML models to directly predict the likelihood of failure. Incorporated time-series forecasting to account for temporal patterns in sensor data and capture evolving failure trends; considered Long Short-Term Memory (LSTM) networks for handling sequential data. Assessed AUC-ROC curve, and F1-score to ensure reliable failure predictions. The end result was a 38% reduction in downtime.",
+      "Optimized resource allocation through linear programming, incorporating insights from arXiv research papers within the realm of operations research and supply chain management."
+    ],
+    skills: ["Machine Learning", "MATLAB", "Demand Forecasting", "Deep Learning", "Time Series Analysis", "Statistical Data Analysis"]
   },
   {
-    emoji: "🔎",
-    title: "Behavior Learning and Interpretability",
-    description: "High-performing problem solvers have diverse and complex decision-making behavior. I am interested in understanding the underlying dynamics of that behavior and developing quantitative explanations for such behavior, which enables the transfer, learning, and interpretability of strategies."
+    title: "Back End Developer",
+    company: "Dezy It, Inc.",
+    type: "Full-time",
+    duration: "2022 - 2022 · less than a year",
+    location: "Remote",
+    description: [
+      "Designed and developed the database, ensuring optimal performance and scalability for the web application.",
+      "Developed APIs for Google authentication, utilized socket.io to enable real-time updates to the web application, implemented automated email functionality upon user logins and signups, thereby improving user experience and retention.",
+      "Spearheaded the creation of a customer and product analytics dashboard, collaborating seamlessly with the marketing team to integrate key performance indicators (KPIs) and leveraging optimized SQL queries to efficiently present data, empowering stakeholders to make informed decisions that significantly propelled the sales funnel.",
+      "Utilized a range of programming languages, frameworks, protocols, including Javascript, Node.js, React.js, OAuth2.0, SQL to deliver high-quality solutions."
+    ],
+    skills: ["React.js", "REST APIs", "SQL", "Node.js", "MongoDB", "Database Development"]
   }
 ];
 
 const topProjects = [
   {
-    title: "Project One: A Deep Learning Framework for Design",
-    authors: "Rutuja, Collaborator One, Collaborator Two",
-    venue: "Journal/Conference Name, 2024",
-    image: "/images/project1.png",
+    title: "Pricing A/B Test & Causal Analysis",
+    description: [
+      "Designed and simulated an end-to-end A/B test on 5,000 institutional clients to measure whether showing fee tier progress nudges users to trade more.",
+      "Estimated causal treatment effect using CUPED variance reduction (cut variance ~50%, equivalent to 2× sample size) and validated with three robustness tests (Welch's t-test, Mann-Whitney, permutation).",
+      "Decomposed revenue impact into volume effect vs. rate compression effect, revealing that blanket rollout destroys margin while targeted rollout (clients 10–20% from tier boundary) generates +11% net revenue.",
+      "Identified a retention insight: clients closest to tier thresholds showed 60% lower churn despite minimal short-term revenue.",
+      "Detected effect decay of ~2%/week using survival analysis, preventing naive annualization that would have overstated ROI by ~40%"
+    ],
     links: [
-      { label: "PDF", url: "#" },
-      { label: "PROJECT PAGE", url: "#" }
+      { label: "GITHUB", url: "https://github.com/hrootscraft/revenue-tier-and-churn-experiment" },
     ]
   },
   {
-    title: "Project Two: Building Scalable Web Applications",
-    authors: "Rutuja, Collaborator Three",
-    venue: "Conference/Journal Name, 2023",
-    image: "/images/project2.png",
+    title: "End-to-End Market Intelligence Pipeline (ELT)",
+    description: [
+      "Engineered an automated ELT infrastructure using Airflow to ingest market data from CoinGecko into PostgreSQL; implemented custom retry logic and idempotent upserts to ensure 100% data consistency across daily runs.",
+      "Architected a 3-layer dbt project (staging, intermediate, marts) to transform raw data into analysis-ready features, including rolling volatility and volume anomaly detection (>2σ thresholds).",
+      "Automated the deployment of Apache Superset via Python scripts to pre-configure dashboards and SQL Lab, enabling immediate stakeholder access to 'mart-layer' metrics."
+    ],
     links: [
-      { label: "PDF", url: "#" },
-      { label: "DEMO", url: "#" }
+      { label: "GITHUB", url: "https://github.com/hrootscraft/crypto-market-analysis?tab=readme-ov-file#crypto-market-intelligence-pipeline" },
     ]
   }
 ];
@@ -320,51 +349,74 @@ const topProjects = [
       color: var(--red-header);
     }
 
-    /* Interests Grid - Notion table style */
-    .interests-section {
+    /* Experience Section */
+    .experience-section {
       margin-bottom: 24px;
     }
 
-    .interest-row {
-      display: grid;
-      grid-template-columns: 160px 1fr;
+    .experience-item {
+      display: flex;
       gap: 12px;
-      padding: 10px 0;
+      padding: 16px 0;
       border-bottom: 1px solid var(--border-color);
     }
 
-    .interest-row:first-child {
-      border-top: none;
+    .experience-content {
+      flex: 1;
     }
 
-    @media (max-width: 700px) {
-      .interest-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-    }
-
-    .interest-title {
-      font-size: 14px;
+    .experience-title {
+      font-size: 16px;
       font-weight: 600;
       color: var(--text-primary);
-      line-height: 1.5;
+      margin-bottom: 2px;
     }
 
-    .interest-content {
-      display: flex;
-      gap: 8px;
+    .experience-company {
+      font-size: 13px;
+      color: var(--text-primary);
+      margin-bottom: 2px;
     }
 
-    .interest-emoji {
-      flex-shrink: 0;
-      font-size: 14px;
-    }
-
-    .interest-description {
+    .experience-meta {
+      font-size: 12px;
       color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .experience-description {
       font-size: 14px;
-      line-height: 1.5;
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin-bottom: 8px;
+      padding-left: 0;
+      list-style-position: outside;
+      margin-left: 0px;
+    }
+
+    .experience-description li {
+      margin-bottom: 8px;
+    }
+
+    .experience-skills {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .experience-skills span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .experience-logo {
+        width: 40px;
+        height: 40px;
+      }
     }
 
     /* Divider */
@@ -379,9 +431,6 @@ const topProjects = [
     }
 
     .highlight-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 24px;
       padding: 24px 0;
       border-bottom: 1px solid var(--border-color);
     }
@@ -390,60 +439,26 @@ const topProjects = [
       padding-top: 0;
     }
 
-    .highlight-item:last-child {
-      border-bottom: none;
-    }
-
-    @media (max-width: 700px) {
-      .highlight-item {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .highlight-image {
-      width: 180px;
-      height: 120px;
-      background: var(--bg-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .highlight-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      image-rendering: auto;
-    }
-
-    @media (max-width: 700px) {
-      .highlight-image {
-        width: 100%;
-        height: 180px;
-      }
-    }
-
     .highlight-content h3 {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 4px;
       line-height: 1.5;
     }
 
-    .highlight-authors {
-      font-size: 13px;
+    .highlight-description {
+      font-size: 14px;
       color: var(--text-primary);
-      margin-bottom: 2px;
-      line-height: 1.5;
+      margin-bottom: 10px;
+      line-height: 1.6;
+      padding-left: 0;
+      list-style-position: outside;
+      margin-left: 0px;
     }
 
-    .highlight-venue {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-bottom: 10px;
-      line-height: 1.5;
+    .highlight-description li {
+      margin-bottom: 8px;
     }
 
     .highlight-links {
@@ -461,12 +476,21 @@ const topProjects = [
       color: rgba(124, 130, 129, 1);
     }
 
+    /* Other Socials - no borders */
+    .social-links.no-border {
+      border-top: none;
+      border-bottom: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
     /* Footer */
     .footer {
       text-align: center;
       padding: 24px 0;
+      border-top: none;
+      margin-top: 32px;
       border-top: 1px solid var(--border-color);
-      margin-top: 48px;
     }
 
     .footer p {
@@ -555,7 +579,7 @@ const topProjects = [
     <section class="social-links">
       <a href={socialLinks.resume} class="social-link" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
-        CV
+        Resume
       </a>
       <a href={socialLinks.github} class="social-link" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -571,32 +595,40 @@ const topProjects = [
       </a>
     </section>
 
-    <!-- Research Interests -->
-    <h2 class="section-header green">Research Interests</h2>
-    <section class="interests-section">
-      {interests.map(interest => (
-        <div class="interest-row">
-          <div class="interest-title">{interest.title}</div>
-          <div class="interest-content">
-            <span class="interest-emoji">{interest.emoji}</span>
-            <p class="interest-description">{interest.description}</p>
+    <!-- Experience -->
+    <h2 class="section-header green">Experience</h2>
+    <section class="experience-section">
+      {experience.map(exp => (
+        <div class="experience-item">
+          <div class="experience-content">
+            <div class="experience-title">{exp.title}</div>
+            <div class="experience-company">{exp.company} · {exp.type}</div>
+            <div class="experience-meta">{exp.duration}<br/>{exp.location}</div>
+            <ul class="experience-description">
+              {exp.description.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <div class="experience-skills">
+              <span>{exp.skills.join(", ")}</span>
+            </div>
           </div>
         </div>
       ))}
     </section>
 
-    <!-- Recent Highlights -->
-    <h2 class="section-header red">Recent Highlights</h2>
+    <!-- Recent Projects -->
+    <h2 class="section-header red">Recent Projects</h2>
     <section class="highlights-section">
       {topProjects.map(project => (
         <article class="highlight-item">
-          <div class="highlight-image">
-            <img src={project.image} alt={project.title} />
-          </div>
           <div class="highlight-content">
             <h3>{project.title}</h3>
-            <p class="highlight-authors"><strong>{project.authors.split(',')[0]}</strong>{project.authors.includes(',') ? ',' + project.authors.split(',').slice(1).join(',') : ''}</p>
-            <p class="highlight-venue">{project.venue}</p>
+            <ul class="highlight-description">
+              {project.description.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
             <div class="highlight-links">
               <span>📁</span>
               {project.links.map((link, i) => (
@@ -610,26 +642,32 @@ const topProjects = [
       ))}
     </section>
 
+    <!-- Other Socials -->
+    <h2 class="section-title">Other Socials:</h2>
+    <section class="social-links no-border">
+      <a href="https://hrootscraft.medium.com/" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        Medium
+      </a>
+      <a href="https://www.kaggle.com/rutujab99" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/></svg>
+        Kaggle
+      </a>
+      <a href="https://www.youtube.com/@hrootscraft" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        YouTube
+      </a>
+      <a href="https://www.instagram.com/hrootscraft/" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+        Instagram
+      </a>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <p>©{name}, {new Date().getFullYear()}</p>
       <p>All Rights Reserved</p>
     </footer>
-
-    <!-- Linked Pages -->
-    <section class="linked-pages">
-      <p class="linked-pages-title">Linked Pages: {topProjects.length + 1}</p>
-      {topProjects.map(project => (
-        <a href="#" class="linked-page">
-          <span>📄</span>
-          {project.title}
-        </a>
-      ))}
-      <a href="/projects" class="linked-page">
-        <span>📄</span>
-        Projects
-      </a>
-    </section>
   </main>
 </body>
 </html>

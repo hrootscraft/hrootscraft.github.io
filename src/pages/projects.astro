@@ -3,44 +3,54 @@ const name = "Rutuja Bhure";
 
 const projects = [
   {
-    title: "Project One: A Deep Learning Framework for Design",
-    authors: "Rutuja, Collaborator One, Collaborator Two",
-    venue: "Journal/Conference Name, 2024",
-    image: "/images/project1.png",
+    title: "Pricing A/B Test & Causal Analysis",
+    description: [
+      "Designed and simulated an end-to-end A/B test on 5,000 institutional clients to measure whether showing fee tier progress nudges users to trade more.",
+      "Estimated causal treatment effect using CUPED variance reduction (cut variance ~50%, equivalent to 2× sample size) and validated with three robustness tests (Welch's t-test, Mann-Whitney, permutation).",
+      "Decomposed revenue impact into volume effect vs. rate compression effect, revealing that blanket rollout destroys margin while targeted rollout (clients 10–20% from tier boundary) generates +11% net revenue.",
+      "Identified a retention insight: clients closest to tier thresholds showed 60% lower churn despite minimal short-term revenue.",
+      "Detected effect decay of ~2%/week using survival analysis, preventing naive annualization that would have overstated ROI by ~40%"
+    ],
     links: [
-      { label: "PDF", url: "#" },
-      { label: "PROJECT PAGE", url: "#" }
+      { label: "GITHUB", url: "https://github.com/hrootscraft/revenue-tier-and-churn-experiment" },
     ]
   },
   {
-    title: "Project Two: Building Scalable Web Applications",
-    authors: "Rutuja, Collaborator Three",
-    venue: "Conference/Journal Name, 2023",
-    image: "/images/project2.png",
+    title: "End-to-End Market Intelligence Pipeline (ELT)",
+    description: [
+      "Engineered an automated ELT infrastructure using Airflow to ingest market data from CoinGecko into PostgreSQL; implemented custom retry logic and idempotent upserts to ensure 100% data consistency across daily runs.",
+      "Architected a 3-layer dbt project (staging, intermediate, marts) to transform raw data into analysis-ready features, including rolling volatility and volume anomaly detection (>2σ thresholds).",
+      "Automated the deployment of Apache Superset via Python scripts to pre-configure dashboards and SQL Lab, enabling immediate stakeholder access to 'mart-layer' metrics."
+    ],
     links: [
-      { label: "PDF", url: "#" },
-      { label: "DEMO", url: "#" }
+      { label: "GITHUB", url: "https://github.com/hrootscraft/crypto-market-analysis?tab=readme-ov-file#crypto-market-intelligence-pipeline" },
     ]
   },
   {
-    title: "Project Three: Machine Learning for Data Analysis",
-    authors: "Rutuja",
-    venue: "Personal Project, 2023",
-    image: "/images/project3.png",
+    title: "Retention Targeting & Risk Scoring",
+    description: [
+      "Built an end-to-end churn prediction system on 7,000+ telecom customers, surfacing that month-to-month contract holders churn at 75% vs. 3% for two-year contracts.",
+      "Compared 8 classification models (Logistic Regression, XGBoost, LightGBM, Neural Networks, etc.) using ROC-AUC as the primary metric to handle 26.5% class imbalance; Neural Network achieved 87% accuracy.",
+      "Applied SMOTE to correct class imbalance and backward stepwise feature elimination to identify tenure, technical support, and total charges as the strongest churn signals.",
+      "Translated model outputs into a retention targeting framework: selectively apply offers to high-risk segments rather than broad campaigns, reducing acquisition cost (new customer acquisition costs 5× more than retention).",
+      "Deployed an interactive Streamlit app enabling non-technical stakeholders to score individual customers and explore churn risk in real time."
+    ],
     links: [
-      { label: "PROJECT PAGE", url: "#" },
-      { label: "CODE", url: "#" }
+      { label: "GITHUB", url: "https://github.com/hrootscraft/telco-customer-churn" }
     ]
   },
   {
-    title: "Project Four: Open Source Contribution",
-    authors: "Rutuja, Open Source Community",
-    venue: "GitHub, 2023",
-    image: "/images/project4.png",
+    title: "Probabilistic Inference + Network Analysis (bnlearn, gRain, igraph)",
+    description: [
+      "Analyzed IoT sensor data to pinpoint indicators of failure modes in industrial robots. Augmented data by running 1000 parallel simulations to generate diverse fault positions. Extracted features from trajectory angles, temperature, torque, and vibrations, including peak frequency and signal-to-noise ratio.",
+      "Developed ML models to directly predict the likelihood of failure. Incorporated time-series forecasting to account for temporal patterns in sensor data and capture evolving failure trends; considered Long Short-Term Memory (LSTM) networks for handling sequential data. Assessed AUC-ROC curve, and F1-score to ensure reliable failure predictions. The end result was a 38% reduction in downtime.",
+      "Optimized resource allocation through linear programming, incorporating insights from arXiv research papers within the realm of operations research and supply chain management."
+    ],
     links: [
-      { label: "CODE", url: "#" }
+      { label: "GITHUB", url: "https://github.com/hrootscraft/bayesian-networks/blob/main/CapstoneAssignment.pdf" },
     ]
   }
+  
 ];
 ---
 
@@ -173,9 +183,6 @@ const projects = [
     }
 
     .project-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 24px;
       padding: 24px 0;
       border-bottom: 1px solid var(--border-color);
     }
@@ -188,35 +195,6 @@ const projects = [
       border-bottom: none;
     }
 
-    @media (max-width: 700px) {
-      .project-item {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .project-image {
-      width: 180px;
-      height: 120px;
-      background: var(--bg-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 700px) {
-      .project-image {
-        width: 100%;
-        height: 180px;
-      }
-    }
-
     .project-content h3 {
       font-size: 16px;
       font-weight: 600;
@@ -225,22 +203,18 @@ const projects = [
       line-height: 1.5;
     }
 
-    .project-authors {
+    .project-description {
       font-size: 14px;
       color: var(--text-primary);
-      margin-bottom: 4px;
-      line-height: 1.5;
-    }
-
-    .project-authors strong {
-      font-weight: 600;
-    }
-
-    .project-venue {
-      font-size: 14px;
-      color: var(--text-secondary);
       margin-bottom: 12px;
-      line-height: 1.5;
+      line-height: 1.6;
+      padding-left: 0;
+      list-style-position: outside;
+      margin-left: 0px;
+    }
+
+    .project-description li {
+      margin-bottom: 8px;
     }
 
     .project-links {
@@ -305,13 +279,13 @@ const projects = [
     <section class="projects-section">
       {projects.map(project => (
         <article class="project-item">
-          <div class="project-image">
-            <img src={project.image} alt={project.title} />
-          </div>
           <div class="project-content">
             <h3>{project.title}</h3>
-            <p class="project-authors"><strong>{project.authors.split(',')[0]}</strong>{project.authors.includes(',') ? ',' + project.authors.split(',').slice(1).join(',') : ''}</p>
-            <p class="project-venue">{project.venue}</p>
+            <ul class="project-description">
+              {project.description.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
             <div class="project-links">
               <span>📁</span>
               {project.links.map((link, i) => (
